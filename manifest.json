@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Booth.pm Yen to Currency Converter",
+    "version": "1.1",
+    "description": "Converts prices on booth.pm from Yen to various currencies and displays both.",
+    "permissions": [
+      "storage"
+    ],
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://booth.pm/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon128.png"
+    }
+  }
+  
