@@ -7,7 +7,7 @@ A Chrome extension, which converts all prices on booth.pm from Yen to various cu
 
 1. Download the code or clone the repository:
    ```sh
-   git clone https://github.com/USERNAME/crunchyroll-notification-hider.git
+   git clone https://github.com/Inarilein/Booth.pmYenToCurrencyConverter.git
    ```
 2. Open Google Chrome and go to `chrome://extensions/`
 3. Activate developer mode (top right)
