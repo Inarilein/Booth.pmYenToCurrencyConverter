@@ -1,27 +1,61 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Currency Converter</title>
-        <link rel="stylesheet" href="popup.css" />
-    </head>
-    <body>
-        <h1>booth.pm Currency Converter</h1>
-        <form id="currencyForm">
-            <label>
-                <input type="radio" name="currency" value="JPY" checked> JPY
-            </label><br />
-            <label>
-                <input type="radio" name="currency" value="EUR"> EUR
-            </label><br />
-            <label>
-                <input type="radio" name="currency" value="USD"> USD
-            </label><br />
-            <label>
-                <input type="radio" name="currency" value="GBP"> GBP
-            </label>
-        </form>
-        <script src="popup.js"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Booth.pm Currency Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="popup">
+      <header class="popup-header">
+        <h1>Booth.pm Currency Converter</h1>
+        <p class="subtitle">Choose your display currency.</p>
+      </header>
+
+      <form id="currencyForm" class="currency-form">
+        <label class="currency-option">
+          <input type="radio" name="currency" value="JPY" checked />
+          <span class="custom-radio"></span>
+          <span class="currency-text">
+            <span class="currency-code">JPY</span>
+            <span class="currency-name">Japanese Yen (original)</span>
+          </span>
+        </label>
+
+        <label class="currency-option">
+          <input type="radio" name="currency" value="EUR" />
+          <span class="custom-radio"></span>
+          <span class="currency-text">
+            <span class="currency-code">EUR</span>
+            <span class="currency-name">Euro</span>
+          </span>
+        </label>
+
+        <label class="currency-option">
+          <input type="radio" name="currency" value="USD" />
+          <span class="custom-radio"></span>
+          <span class="currency-text">
+            <span class="currency-code">USD</span>
+            <span class="currency-name">US Dollar</span>
+          </span>
+        </label>
+
+        <label class="currency-option">
+          <input type="radio" name="currency" value="GBP" />
+          <span class="custom-radio"></span>
+          <span class="currency-text">
+            <span class="currency-code">GBP</span>
+            <span class="currency-name">British Pound</span>
+          </span>
+        </label>
+      </form>
+
+      <footer class="popup-footer">
+        <span class="hint">Conversion happens locally. Exchange rates are only approximations.</span>
+      </footer>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
 </html>

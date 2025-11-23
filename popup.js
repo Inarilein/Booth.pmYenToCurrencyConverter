@@ -1,26 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("currencyForm");
-  
-    // Load the current currency selection
-    chrome.storage.sync.get(["currency"], (result) => {
-      if (result.currency) {
-        form.currency.value = result.currency;
+  const form = document.getElementById("currencyForm");
+
+  // Load current currency selection
+  chrome.storage.sync.get(["currency"], (result) => {
+    if (result.currency) {
+      const input = form.querySelector(
+        `input[name="currency"][value="${result.currency}"]`
+      );
+      if (input) {
+        input.checked = true;
       }
-    });
-  
-    // Update the currency selection
-    form.addEventListener("change", () => {
-      const currency = form.currency.value;
-      chrome.storage.sync.set({ currency }, () => {
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-          chrome.scripting.executeScript({
-            target: { tabId: tabs[0].id },
-            function: () => {
-              window.location.reload();
-            }
-          });
-        });
-      });
-    });
+    }
   });
-  
+
+  // Save currency on change (no reload needed)
+  form.addEventListener("change", () => {
+    const currency = form.currency.value;
+    chrome.storage.sync.set({ currency });
+  });
+});
